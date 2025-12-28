@@ -16,10 +16,11 @@ const Redirect = () => {
         return;
       }
 
-      await storeClicks({
-        id: link.id,
-        originalUrl: link.original_url,
-      });
+        storeClicks({
+      id: link.id,
+      originalUrl: link.original_url,
+    }).catch(() => {});
+
 
       // Actual redirect (in case your backend doesn't auto-redirect)
       window.location.href = link.original_url;
