@@ -38,6 +38,7 @@ const Signup = () => {
 useEffect(() => {
   if (!error && data) {
     fetchUser(); // 🔥 THIS updates isAuthenticated
+    navigate(`/dashboard${longLink ? `?createNew=${longLink}` : ""}`);
   }
 }, [error, data]);
 
